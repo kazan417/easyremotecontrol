@@ -30,9 +30,7 @@ WantedBy=multi-user.target
 " > /lib/systemd/system/x11vnc.service
 x11vnc -storepasswd "$mypass" /etc/vncpasswd
 echo "включаем автозагрузку vncserver"
-systemctl enable x11vnc.service
-echo "запускаем vncserver"
-systemctl start x11vnc.service
+systemctl enable --now x11vnc.service
 echo "удаленный доступ настроен"
 read
 fi
